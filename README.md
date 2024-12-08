@@ -110,12 +110,12 @@ You can deploy the bot using Docker:
 
 1. Build the Docker image:
    ```bash
-   docker build -t myslt-bot .
+   docker build -t my_slt_bot_image .
    ```
 
 2. Run the Docker container:
    ```bash
-   docker run -d --env-file .env myslt-bot
+   docker run --name MySLT_Bot my_slt_bot_image
    ```
 
 ## Contributing
