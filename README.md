@@ -76,7 +76,7 @@ MySLT_Bot/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/MySLT_Bot.git
+   git clone https://github.com/HimashaHerath/MySLT_Bot
    cd MySLT_Bot
    ```
 
