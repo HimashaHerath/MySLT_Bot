@@ -15,5 +15,11 @@ COPY . .
 # The .env file should remain outside the image for security reasons.
 # You will provide it at runtime using `--env-file .env`.
 
+# Expose API port
+EXPOSE 8000
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
 # Command to start the bot
-CMD ["python", "Bot.py"]
+CMD ["python", "runner.py"]

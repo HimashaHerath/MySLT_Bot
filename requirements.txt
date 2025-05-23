@@ -2,3 +2,5 @@ discord.py
 python-dotenv
 requests
 pytz
+fastapi
+uvicorn
