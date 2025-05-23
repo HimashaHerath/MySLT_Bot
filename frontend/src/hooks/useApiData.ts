@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { api } from '@/services/api';
+import type { UsageSummary } from '@/services/api';
 
 // Generic hook for fetching data from any API endpoint
 export function useApiData<T>(
@@ -44,7 +45,25 @@ export function useApiData<T>(
 
 // Specific hooks for each API endpoint
 export function useUsageSummary(refreshInterval?: number) {
-  return useApiData(api.getUsageSummary, { used: 0, limit: 1, percentage: 0 }, refreshInterval);
+  const initialData: UsageSummary = {
+    total_used: 0,
+    total_limit: 1,
+    total_percentage: 0,
+    daytime: {
+      used: 0,
+      limit: 1,
+      remaining: 1,
+      percentage: 0
+    },
+    nighttime: {
+      used: 0,
+      limit: 1,
+      remaining: 1,
+      percentage: 0
+    }
+  };
+  
+  return useApiData(api.getUsageSummary, initialData, refreshInterval);
 }
 
 export function useProfile() {

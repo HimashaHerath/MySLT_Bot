@@ -1,10 +1,20 @@
 // API endpoints for MySLT Bot
 const API_BASE_URL = 'http://localhost:8000';
 
-export interface UsageSummary {
+export interface UsageDetail {
   used: number;
   limit: number;
+  remaining: number;
   percentage: number;
+}
+
+export interface UsageSummary {
+  total_used: number;
+  total_limit: number;
+  total_percentage: number;
+  daytime: UsageDetail;
+  nighttime: UsageDetail;
+  reported_time?: string;
 }
 
 export interface ProfileInfo {
